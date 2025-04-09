@@ -147,7 +147,7 @@ class _CricketFieldPageState extends State<CricketFieldPage> {
                     ElevatedButton(
                       onPressed: () => Navigator.pop(context),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink,
+                        backgroundColor: Colors.green,
                         foregroundColor: Colors.white,
                         padding: EdgeInsets.symmetric(
                           horizontal: 32,
@@ -185,8 +185,8 @@ class _CricketFieldPageState extends State<CricketFieldPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showPositionSheet(context),
-        backgroundColor: Colors.pink,
-        child: Icon(Icons.add),
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add, color: Colors.white),
       ),
       body: Stack(
         children: [
