@@ -31,7 +31,6 @@ class _CricketFieldPageState extends State<CricketFieldPage> {
   List<String> filteredPositions = [];
   final TextEditingController searchController = TextEditingController();
   List<String> selectedPositions = [];
-  Offset fabPosition = Offset(150, 600);
 
   @override
   void initState() {
@@ -166,9 +165,7 @@ class _CricketFieldPageState extends State<CricketFieldPage> {
           },
         );
       },
-    ).whenComplete(() {
-      searchController.clear();
-    });
+    );
   }
 
   @override
@@ -241,22 +238,6 @@ class _CricketFieldPageState extends State<CricketFieldPage> {
               ],
             ),
           ),
-          // Positioned(
-          //   left: fabPosition.dx,
-          //   top: fabPosition.dy,
-          //   child: GestureDetector(
-          //     onPanUpdate: (details) {
-          //       setState(() {
-          //         fabPosition += details.delta;
-          //       });
-          //     },
-          //     child: FloatingActionButton(
-          //       onPressed: () => _showPositionSheet(context),
-          //       backgroundColor: Colors.pink,
-          //       child: Icon(Icons.add),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );
@@ -342,7 +323,7 @@ class CricketFieldPainter extends CustomPainter {
         final dy = offset.dy * size.height;
 
         final Paint dotPaint = Paint()..color = Colors.red;
-        canvas.drawCircle(Offset(dx, dy), 4, dotPaint);
+        canvas.drawCircle(Offset(dx, dy), 5, dotPaint);
 
         final TextSpan span = TextSpan(
           text: '$count',
@@ -357,7 +338,7 @@ class CricketFieldPainter extends CustomPainter {
           textDirection: TextDirection.ltr,
         );
         tp.layout();
-        tp.paint(canvas, Offset(dx + 5, dy - 5));
+        tp.paint(canvas, Offset(dx + 6, dy - 6));
 
         count++;
       }
@@ -376,7 +357,7 @@ const Map<String, Offset> fieldingPositionCoordinates = {
   'Cover': Offset(0.22, 0.55),
   'Mid-off': Offset(0.35, 0.65),
   'Mid-on': Offset(0.65, 0.65),
-  'Square Leg': Offset(0.7, 0.5),
+  'Square Leg': Offset(0.8, 0.38),
   'Fine Leg': Offset(0.85, 0.35),
   'Long On': Offset(0.65, 0.85),
   'Long Off': Offset(0.35, 0.85),
